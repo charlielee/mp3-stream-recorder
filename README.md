@@ -1,4 +1,4 @@
-# forgeradioshowrecorder
+# MP3 Stream Recorder
 
 A small Node program for recording an MP3 stream to a file.
 
