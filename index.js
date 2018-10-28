@@ -7,10 +7,17 @@ var request = require('request');
 // DURATION OF STREAM IN MILLISECONDS
 const DURATION = argv.d || 5000;
 
+// Check the output directory exists
+var output_dir = './shows';
+if (!fs.existsSync(output_dir)){
+  console.log("Created output directory:", output_dir)
+  fs.mkdirSync(output_dir);
+}
+
 // Windows does not allow colons in file names
 var output_file_date = new Date().toISOString().replace(/:/g, "-");
 
-var output_file_name = `shows/show_${output_file_date}.mp3`;
+var output_file_name = `${output_dir}/show_${output_file_date}.mp3`;
 var output_stream = fs.createWriteStream(output_file_name);
 
 // Streams
