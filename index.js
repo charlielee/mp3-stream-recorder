@@ -53,7 +53,10 @@ stream.on("response", function(response) {
           url: `https://maker.ifttt.com/trigger/${argv.ifttt_event}/with/key/${argv.ifttt_key}`,
           form: {"value1": output_file_name}},
           function (err, httpResponse, body) {
-            console.log("Response:", body, err);
+            console.log("Response:", body);
+            if (err) {
+              console.error(err);
+            }
           });
       }
     }
