@@ -18,6 +18,13 @@ Note: if running this as a cronjob, `node` and `index.js` need to be absolute pa
 * `-d` The duration in milliseconds to record for (default `5000`)
 * `-o` The output directory of the file (default `./shows`)
 
+### IFTTT Support
+
+The following arguments can also be supplied, in order to trigger an IFTTT Webhook applet each time a recording finishes.
+
+* `--ifttt_event` The  **Event Name** entered on the Webhook applet
+* `--ifttt_key` The user's IFTTT Webhooks key
+
 ## License
 © 2018 Charlie Lee, http://charlielee.uk/
 

@@ -44,6 +44,17 @@ stream.on("response", function(response) {
     if (cur_length >= DURATION) {
       stream.abort();
       console.log("Finished. Output to:", output_file_name)
+
+      // Send a get request via IFTTT (key is a command line argument)
+      if (argv.ifttt_event && argv.ifttt_key) {
+        console.log("Sending a notification to IFTTT")
+        request.post({
+          url: `https://maker.ifttt.com/trigger/${argv.ifttt_event}/with/key/${argv.ifttt_key}`,
+          form: {"value1": output_file_name}},
+          function (err, httpResponse, body) {
+            console.log("Response:", body, err);
+          });
+      }
     }
   })
   .on('error', function(err) {
