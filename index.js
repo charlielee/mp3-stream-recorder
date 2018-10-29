@@ -17,8 +17,9 @@ if (!fs.existsSync(output_dir)){
 // Windows does not allow colons in file names
 var output_file_date = new Date().toISOString().replace(/:/g, "-");
 
-var output_file_name = `${output_dir}/show_${output_file_date}.mp3`;
-var output_stream = fs.createWriteStream(output_file_name);
+var output_file_name = `show_${output_file_date}.mp3`;
+var output_file_path = `${output_dir}/${output_file_name}`;
+var output_stream = fs.createWriteStream(output_file_path);
 
 // Streams
 var stream_url = argv.s || 'http://firewall.pulsradio.com';
