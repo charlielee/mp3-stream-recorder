@@ -8,7 +8,7 @@ var request = require('request');
 const DURATION = argv.d || 5000;
 
 // Check the output directory exists
-var output_dir = './shows';
+var output_dir = argv.o || './shows';
 if (!fs.existsSync(output_dir)){
   console.log("Created output directory:", output_dir)
   fs.mkdirSync(output_dir);

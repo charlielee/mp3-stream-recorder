@@ -14,3 +14,4 @@ node index.js -s "http://firewall.pulsradio.com" -d 20000
 
 * `-s` The URL of the stream to record
 * `-d` The duration in milliseconds to record for
+* `-o` The output directory of the file (default `./shows`)
